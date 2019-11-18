@@ -1,0 +1,10 @@
+node_modules
+package-lock.json
+mix-manifest.json
+public/assets/js/app.js
+public/assets/js/app.js.map
+public/assets/js/vendor.js
+public/assets/js/vendor.js.map
+public/assets/js/manifest.js
+public/assets/js/manifest.js.map
+public/assets/css/app.css
