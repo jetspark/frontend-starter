@@ -17,6 +17,7 @@ mix.disableSuccessNotifications()
         resolve: {
             alias: {
                 '@': path.resolve('src/js'),
+                'vue$': 'vue/dist/vue.esm.js',
             },
         },
     })
