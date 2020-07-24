@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 mix.disableSuccessNotifications()
@@ -10,9 +9,6 @@ mix.disableSuccessNotifications()
                     filename: 'public/assets/img/sprite.svg'
                 }
             }),
-            new LiveReloadPlugin({
-                appendScriptTag: process.env.NODE_ENV !== 'production'
-            })
         ],
         resolve: {
             alias: {
@@ -20,6 +16,14 @@ mix.disableSuccessNotifications()
                 'vue$': 'vue/dist/vue.esm.js',
             },
         },
+    })
+    .browserSync({
+        proxy: 'frontend-starter.loc',
+        host: 'frontend-starter.loc',
+        open: false,
+        notify: false,
+        minify: false,
+        files: ['src/**/*', 'public/**/*.html', 'public/**/*.php']
     })
     .js('src/js/app.js', 'public/assets/js')
     .postCss('src/css/app.css', 'public/assets/css', [
