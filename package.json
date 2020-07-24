@@ -22,5 +22,8 @@
         "vue": "^2.6.11",
         "vue-template-compiler": "^2.6.11",
         "webpack-livereload-plugin": "^2.3.0"
+    },
+    "dependencies": {
+        "alpinejs": "^2.5.0"
     }
 }
