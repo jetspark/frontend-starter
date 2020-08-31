@@ -20,10 +20,11 @@ mix.disableSuccessNotifications()
     .browserSync({
         proxy: 'frontend-starter.loc',
         host: 'frontend-starter.loc',
+        files: ['src/**/*', 'public/**/*.html', 'public/**/*.php'],
         open: false,
         notify: false,
         minify: false,
-        files: ['src/**/*', 'public/**/*.html', 'public/**/*.php']
+        ghostMode: false
     })
     .js('src/js/app.js', 'public/assets/js')
     .postCss('src/css/app.css', 'public/assets/css', [
